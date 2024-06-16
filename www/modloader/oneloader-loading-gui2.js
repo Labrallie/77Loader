@@ -1,17 +1,12 @@
 window.$oneLoaderGui = new (class OneLoaderGui {
     constructor() {
-        this.easterEgg = {
-            month: 6,
-            day: 6,
-            text: "Happy Birthday SJ and Jakey"
-        }
         this.container = document.createElement("div");
         this.container.style = "font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #222; color: white; width: 100vw; height: 100vh; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;";
         requestAnimationFrame(() => { this.tryMount(); });
 
         this.container.innerHTML = `
         <div class="header-container" style="display: flex; justify-content: center; position: fixed; top: 0; left: 0; right: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-        <span class="e" style="font-size: 2em; font-weight: 900; margin: 0; position: relative;"><span style="color: #0089D7">One</span>Loader</span>
+        <span class="e" style="font-size: 2em; font-weight: 900; margin: 0; position: relative;"><span style="color: #0089D7">77</span>Loader</span>
     </div>
     <div class="circle-container">
         <div data-ol="circle" style="width: 180px; height: 180px; --percentage: 50; position: relative;">
@@ -55,9 +50,6 @@ window.$oneLoaderGui = new (class OneLoaderGui {
     }
 
     setVersionNumber(v) {
-        if ((new Date()).getDate() === this.easterEgg.day && (new Date()).getMonth() === this.easterEgg.month) {
-            v = v + " || " + this.easterEgg.text;
-        }
         this.vernum.innerText = v;
     }
 

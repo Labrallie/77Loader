@@ -480,7 +480,7 @@ ${JSON.stringify(plugins, null, 2)}`);
                 options: [
                     "ALLOW", "DENY"
                 ],
-                helpText: "Should OneLoader automatically update?",
+                helpText: "Should 77Loader automatically update?",
                 spacing: 180,
                 index: $modLoader.config._autoUpdater.check === "allow" ? 0 : 1
             })

@@ -1,7 +1,7 @@
 if ($modLoader.isInTestMode) return;
 
 let GH_AUTH="";
-let repo_base="rphsoftware/oneloader";
+let repo_base="nift4/77Loader";
 
 async function fetchLatestReleaseMeta() {
     let headers = {};
@@ -56,7 +56,7 @@ setTimeout(function() {
         let u = setInterval(function() {
             prompt.style.zIndex = 99;
         }, 500);
-        prompt.innerHTML = `<h2 style="margin: 0; text-align: Center;">OneLoader auto-updating</h2>
+        prompt.innerHTML = `<h2 style="margin: 0; text-align: Center;">77Loader auto-updating</h2>
     <p style="margin: 0; text-align: Center; font-size: 20px;">Would you like to enable automating updates? You can always change this in the settings.</p><p data-oneloader-countdown="2222" style="margin: 0; text-align: Center; font-size: 16px;">This prompt will automatically disappear and default to disabling in 15s</p>`;
 let denyBtn = document.createElement("a");
 denyBtn.style = "border-bottom-left-radius: 16px; position: absolute; bottom: 0; left: 0; background: #000a; text-decoration: none; color: white; width: 50%; font-size: 24px; height: 32px; line-height: 32px; text-align: center;";

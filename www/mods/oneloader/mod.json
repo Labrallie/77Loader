@@ -1,8 +1,8 @@
 {
     "$schema": "https://rph.space/oneloader.manifestv1.schema.json",
     "id":"oneloader",
-    "name":"OneLoader assistant",
-    "description": "A helper mod for OneLoader",
+    "name":"77Loader assistant",
+    "description": "A helper mod for 77Loader",
     "manifestVersion": 1,
     "version": "1.4.1",
     "_flags":[

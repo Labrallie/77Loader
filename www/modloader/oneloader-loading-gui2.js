@@ -1,8 +1,26 @@
+// Image credit: Bajamaid
+const hot_catgirl = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAHJQTFRF////Mjc+QEJRlajBAAAA9fn/67+uv3FeHB0knrTP/ffudllHKiw+wdLgrrfCgJPH/9zWcHBw/vv19NvSzOD1zcHWPlVwkrPcfZzCrMzsanXdISxUHSEwmbD/6vj/w9Tdb36SPEl2rQAAjx0ddUUgHp4e6hIBYQAAACZ0Uk5TAP////////////////////////////////////////////////84fzWlAAAA+0lEQVQ4jZWR226EIBBAGWZAQd1Lr+5NhqX7/7/Y4NrYLkObnkzk4ZyMQZVaiQ/nI/ESf5xlcJ5NvJyrAc/UAw4zzJVg8Tmp+Gnxk1xwCNOdvOL22xtC4I9bWczBUqWUUumZiCznZ0jXqxDQ5nlPlt7GA9WC/RMRvYwHiikV34KRNrsdeXod3+kk/A5GJCLvPRGdjnKA2GQQpYCzhb4f+h45HoUFTWMtaGOMRrald855b0FrozVyU3pjnO26ewCFVsoNQ9chAhgAkALltogIet4grsjX+PK1AvSKVHz3YvFnoGBN5IvkZEHWSqnG2jxVr1qt89QD1bZ5/scnxisXy/v+IbQAAAAASUVORK5CYII=`;
+
 window.$oneLoaderGui = new (class OneLoaderGui {
     constructor() {
+        this.easterEgg = {
+            month: 6,
+            day: 6,
+            text: "Happy Birthday SJ and Jakey"
+        }
         this.container = document.createElement("div");
         this.container.style = "font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #222; color: white; width: 100vw; height: 100vh; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;";
         requestAnimationFrame(() => { this.tryMount(); });
+
+        let catgirlScale = Math.floor(Math.floor(Math.min(window.innerWidth, window.innerHeight) / 3) / 32);
+
+        let catgirlAnimationOptions = [
+            ["__oneloader_catgirl__1_", "2s linear"],
+            ["__oneloader_catgirl__2_", "2s cubic-bezier(0.68, 1.1, 0.59, 0.79)"],
+            ["__oneloader_catgirl__3_", "1s ease"]
+        ];
+
+        let pickedOption = catgirlAnimationOptions[Math.floor(Math.random() * catgirlAnimationOptions.length)];
 
         this.container.innerHTML = `
         <div class="header-container" style="display: flex; justify-content: center; position: fixed; top: 0; left: 0; right: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
@@ -41,6 +59,43 @@ window.$oneLoaderGui = new (class OneLoaderGui {
     <div style="position: fixed; bottom: 0; left: 0; color: #666; ">
         v<span data-ol="vernum">???</span>
     </div>
+    <style>
+        #__oneloader_catgirl__ {
+            animation: ${pickedOption[0]} ${pickedOption[1]} infinite;
+            transform-origin: center;
+        }
+        @keyframes __oneloader_catgirl__1_ {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        @keyframes __oneloader_catgirl__2_ {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes __oneloader_catgirl__3_ { /* Credit: @kodicraft */
+            0% {
+                transform: translate(0px, 0px) scale(1.0, 1.0);
+            }
+            25% {
+                transform: translate(0px, -128px) scale(1.0, 1.0);
+            }
+            50% {
+                transform: translate(0px, 0px) scale(1.0, 1.0);
+            }
+        }
+    </style>
+    <img id="__oneloader_catgirl__" width="${catgirlScale * 32}" height="${catgirlScale * 32}" src="${hot_catgirl}" style="position: fixed; bottom: 0; right: 0; image-rendering: pixelated; z-index: 0;">
         `;
         this.vernum = this.container.querySelector("[data-ol=vernum]");
         this.percentage = this.container.querySelector("[data-ol=percentage]");
@@ -50,6 +105,10 @@ window.$oneLoaderGui = new (class OneLoaderGui {
     }
 
     setVersionNumber(v) {
+        if ((new Date()).getDate() === this.easterEgg.day && (new Date()).getMonth() === this.easterEgg.month) {
+            v = v + " || " + this.easterEgg.text;
+        }
+        v = v + " || OneLoader catgirl by bajamaid"
         this.vernum.innerText = v;
     }
 

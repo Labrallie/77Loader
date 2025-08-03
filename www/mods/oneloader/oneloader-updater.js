@@ -1,7 +1,7 @@
 if ($modLoader.isInTestMode) return;
 
 let GH_AUTH="";
-let repo_base="nift4/77Loader";
+let repo_base="Labrallie/77Loader";
 
 async function fetchLatestReleaseMeta() {
     let headers = {};

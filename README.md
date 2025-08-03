@@ -30,4 +30,4 @@ This project contains in part or in full the following projects:
 - [node-stream-zip](https://github.com/antelle/node-stream-zip) | License: **MIT** | Degree of use: Library used in full to process mods bundled in zip files
 - [JSON-Patch](https://github.com/Starcounter-Jack/JSON-Patch) | License: **MIT** | Degree of use: Library used in full to apply patches to game data
 - [Rollup](https://github.com/rollup/rollup) | License: [Multiple](https://github.com/rollup/rollup/blob/master/LICENSE.md) | Degree of use: Building plugins shipped as ES modules
-- [OneLoader](https://github.com/rphsoftware/OneLoader) | Licesnse: **MIT** | Degree of use: Source code based on this project
+- [OneLoader](https://github.com/rphsoftware/OneLoader) | License: **MIT** | Degree of use: Source code based on this project
